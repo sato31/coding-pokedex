@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.barra{
+    background-color: #f2000b;
+    padding: 5px 50px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.contenedor-logos{
+    width: 293.03px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+}
+
+.container-ligths{
+    width: 293.03px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.point-blue{
+    width: 40px;
+    height: 40px;
+}
+.name-pokedex{
+    margin-left: 15px;
+    width: 150px;
+    height: 50px;
+}
+
+.ligth{
+    width: 13px;
+    height: 13px;
+    margin: 2.5px;
+}
+
+.contenedor-bus{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

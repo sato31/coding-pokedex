@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 <body>
-    <header>
-        <div id="container-logo">
-            <img src="./images/pokedex-logo.jpg" alt="logo">
-            <img src="./images/Pokedex.png" alt="Pokedex">
+    <header class="barra">
+        <div id="container-logos" class="contenedor-logos">
+            <img class="logo" src="./images/pokedex-logo.jpg" alt="logo">
         </div>
-        <div id="container-tools">
+        <div class="container-ligths">
+            <img class="point-blue" src="./images/blue.png" alt="blue">
+            <img class="name-pokedex" src="./images/Pokedex.png" alt="Pokedex">
+            <img class="ligth" src="./images/red.png" alt="red">
+            <img class="ligth" src="./images/yellow.png" alt="yellow">
+            <img class="ligth" src="./images/green.png" alt="green">
+        </div>
+        <div id="container-tools" class="contenedor-bus">
             <div id="container-search">
                 <input type="search" name="search" id="search" placeholder="Nombre del Pokémon">
                 <button><img src="" alt="">B</button>
@@ -21,7 +28,7 @@
             <div id="container-filter" class="dropdown">
                 <button class="dropbtn">Filtrar por tipo  ▼</button>
                 <div id="myDropdown" class="dropdown-content">
-                  <input type="text" placeholder="Tipo" id="search-type" onkeyup="filterFunction()">
+                  <!-- <input type="text" placeholder="Tipo" id="search-type" onkeyup="filterFunction()">
                   <a href="#steel">Acero</a>
                   <a href="#water">Agua</a>
                   <a href="#bug">Bicho</a>
@@ -39,7 +46,7 @@
                   <a href="#dark">Siniestro</a>
                   <a href="#ground">Tierra</a>
                   <a href="#poison">Veneno</a>
-                  <a href="#flying">Volador</a>
+                  <a href="#flying">Volador</a> -->
                 </div>
             </div>
         </div>
