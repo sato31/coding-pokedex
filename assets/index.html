@@ -10,7 +10,7 @@
 </head>
 
 <header class="barra">
-    <div id="container-logos" class="contenedor-logos">
+    <div class="container-logos">
         <img class="logo" src="./images/pokedex-logo.png" alt="logo">
     </div>
     <div class="container-ligths">
@@ -20,7 +20,7 @@
         <img class="ligth" src="./images/yellow.png" alt="yellow">
         <img class="ligth" src="./images/green.png" alt="green">
     </div>
-    <div id="container-tools" class="contenedor-bus">
+    <div class="container-tools">
         <div id="container-search">
             <input type="search" name="search" id="search" placeholder="Nombre del Pokémon">
             <button><img src="" alt="">B</button>
@@ -53,27 +53,45 @@
 </header>
 
 <body>
-    <main class="container-cards">
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
+    <main id="contenedor-tarjetas" class="container-cards">
+
+        <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
                 </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
                 </div>
             </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-type">
-                    <!-- <h4>Tipo</h4> -->
-                    <h4>Fuego</h4>
-                    <h4>F</h4>
+    
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
                 </div>
-                <div>
-                    <div id="container-hab">
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
                         <h4>Debilidades</h4>
                         <p>Agua</p>
                         <p>Tierra</p>
@@ -82,246 +100,421 @@
                 </div>
             </div>
         </div>
+
+        <!-- <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
+                </div>
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
+                </div>
+            </div>
     
-        <!-- <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
                 </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
-                </div>
-            </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
-                </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
+                        <h4>Debilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>
+                        <p>Roca</p>         
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
+                </div>
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
+                </div>
+            </div>
     
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
                 </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
-                </div>
-            </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
-                </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
-                </div>
-            </div>
-        </div>
-    
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
-                </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
-                </div>
-            </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
-                </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
-                </div>
-            </div>
-        </div>
-    
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
-                </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
-                </div>
-            </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
-                </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
-                </div>
-            </div>
-        </div>
-    
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
-                </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
-                </div>
-            </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
-                </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
+                        <h4>Debilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>
+                        <p>Roca</p>         
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
+        <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
                 </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
                 </div>
             </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
+    
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
                 </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
+                        <h4>Debilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>
+                        <p>Roca</p>         
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
+                </div>
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
+                </div>
+            </div>
     
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
                 </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
-                </div>
-            </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
-                </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
+                        <h4>Debilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>
+                        <p>Roca</p>         
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
+                </div>
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
+                </div>
+            </div>
     
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
                 </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
-                </div>
-            </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
-                </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
+                        <h4>Debilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>
+                        <p>Roca</p>         
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
+                </div>
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
+                </div>
+            </div>
     
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
                 </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
-                </div>
-            </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
-                </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
+                        <h4>Debilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>
+                        <p>Roca</p>         
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
+                </div>
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
+                </div>
+            </div>
     
-        <div id="card-poke" class="card">
-            <div id="header-card" class="header-card">
-                <div id="num-poke">
-                    <h2>001</h3>
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
                 </div>
-                <div id="nombre-poke">
-                    <h2>Charmander</h2>
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
+                        <h4>Debilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>
+                        <p>Roca</p>         
+                    </div>
                 </div>
             </div>
-            <div id="container-img" class="container-img-poke">
-                <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
-            </div>
-            <div class="footer-card">
-                <div id="container-labels">
-                    <h4>Tipo: </h4>
-                    <h4>Habilidades: </h4>
+        </div>
+
+        <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
                 </div>
-                <div id="container-info">
-                    <p>Fuego</p>
-                    <p>Ascuas</p>         
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
+                </div>
+            </div>
+    
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
+                </div>
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
+                        <h4>Debilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>
+                        <p>Roca</p>         
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tarjeta-unida" class="united-card">           
+            <div id="tarjeta-poke" class="card">
+                <div id="encabezado-tarjeta" class="header-card">
+                    <div id="num-poke">
+                        <h2>001</h3>
+                    </div>
+                    <div id="nombre-poke">
+                        <h2>Charmander</h2>
+                    </div>
+                </div>
+                <div id="contenedor-img" class="container-img">
+                    <img id="img" class="img-poke" src="./images/charmander.png" alt="Charmander">
+                </div>
+                <div id="tipos" class="container-type">
+                    <h4 id="tipo1" class="type">Fuego</h4>
+                    <h4 id="tipo2" class="type">Fuego</h4>
+                </div>
+            </div>
+    
+            <div id="pie-tarjeta" class="footer-card">
+                <div class="footer-card-row-1">
+                    <div class="height">
+                        <h4>Altura</h4>
+                        <p>1.00</p>
+                    </div>
+                    <div class="weight">
+                        <h4>Peso</h4>
+                        <p>1.00</p>
+                    </div>
+                </div>
+                <div class="footer-card-row-2">
+                    <div id="contenedor-hab" class="container-hab">
+                        <h4>Habilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>        
+                    </div>
+                    <div id="contenedor-deb" class="container-deb">
+                        <h4>Debilidades</h4>
+                        <p>Agua</p>
+                        <p>Tierra</p>
+                        <p>Roca</p>         
+                    </div>
                 </div>
             </div>
         </div> -->
+    
     </main>
 
     <script src="./src/js/index.js"></script>
