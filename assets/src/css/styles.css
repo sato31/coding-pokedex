@@ -99,7 +99,7 @@ body{
 }
 .footer-card{
     background-color: orangered;
-    height: 150px;
+    height: auto;
     width: 220px;
 }
 
