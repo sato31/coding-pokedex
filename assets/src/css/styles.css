@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color:rgb(177, 189, 201);
+    background-color:rgb(194, 207, 219);
 }
 
 .barra{
@@ -68,16 +68,75 @@ body{
 .united-card{
     width: 220px;
     height: auto;
+    /* background-color: orangered; */
 }
 
 .card{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: orangered;
-    height: 220px;
+    /* background-color: orangered; */
+    height: auto;
     width: 220px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+h4.type{
+    color: whitesmoke;
+}
+.steel{
+    background-color: #b8b8d0;
+} 
+.water{
+    background-color: #6890f0;
+}
+.bug{
+    background-color: #a8b820;
+}
+.dragon{
+    background-color: #7038f8;
+}
+.electric{
+    background-color: #f8d030;
+}
+.ghost{
+    background-color: #705898;
+}
+.fire{
+    background-color: #f08030;
+}
+.fairy{
+    background-color: #f0b6bc;
+}
+.ice{
+    background-color: #98d8d8;
+}
+.fighting{
+    background-color: #c03028;
+}
+.normal{
+    background-color: #a8a878;
+}
+.grass{
+    background-color: #78c850;
+}
+.psychic{
+    background-color: #f85888;
+}
+.rock{
+    background-color: #b8a038;
+}
+.dark{
+    background-color: #705848;
+}
+.ground{
+    background-color: #e0c068;
+}
+.poison{
+    background-color: #a040a0;
+}
+.flying{
+    background-color: #a890f0;
 }
 
 .header-card{
@@ -94,8 +153,8 @@ body{
 }
 
 .img-poke{
-    width: 150px;
-    height: 150px;
+    width: 185px;
+    height: 185px;
 }
 
 .container-type{
@@ -104,7 +163,7 @@ body{
     justify-content: space-evenly;
 }
 .footer-card{
-    background-color: orangered;
+    /* background-color: orangered; */
     height: auto;
     width: 220px;
 }
