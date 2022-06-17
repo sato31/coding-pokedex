@@ -8,6 +8,7 @@ const main = () => {
     fetch(api)
     .then(response => response.json())
     .then(data => normalizeData(data))
+    .then(pokemons => convertData(pokemons))
     .then(pokemons => pokemons.forEach(renderCard))
 }
 
@@ -16,27 +17,46 @@ const normalizeData = (data) => {
     data.forEach(element => {
         const { number, name, ThumbnailImage, type, weight, height, abilities, weakness } = element;
         const pokemon = {
-            id: number,
+            numero: number,
             nombre: name,
             imagen: ThumbnailImage,
             tipo: type,
-            peso: (weight/ 2.205).toFixed(2), // Convierte lb a kg
-            tamaño: (height / 39.37).toFixed(2), //Convierte in a m
+            peso: weight,
+            tamaño: height,
             habilidades: abilities,
             debilidades: weakness,
         };
         pokemons.push(pokemon);
     });
+    return pokemons;
+};
+
+const convertData = (pokemons) =>{
+    pokemons.forEach(poke => {
+        poke.peso = (poke.peso / 2.205).toFixed(2); // Convierte lb a kg
+        poke.tamaño = (poke.tamaño / 39.37).toFixed(2); // Convierte lb a kg
+        // poke.tipo.forEach(subtipo => {
+        //     // subtipo = subtipo[0].toUpperCase() + subtipo.substring(1);
+        //     // console.log('May: '+ poke.subtipo);
+        // });
+
+    })
+    for (let i = 0; i < pokemons.length; i++) {       
+        for (let j = 0; j < pokemons[i].tipo.length; j++) {
+            let subtipo = pokemons[i].tipo[j] 
+            pokemons[i].tipo[j] = (subtipo[0].toUpperCase() + subtipo.substring(1));
+        }
+    }
     console.log(pokemons);
     return pokemons;
-}; 
+}
 
 //función que renderiza (pinta) la informacion de cada tarjeta
 const renderCard = (element) => {
 
     // Se crean los elementos html desde javascript
     const cardUniteDiv = document.createElement('div');
-    const cardPokeDiv = document.createElement('div');
+    const cardPokeDiv = document.createElement('a');
     const headerCardDiv = document.createElement('div');
     const numPokeDiv = document.createElement('div');
     const numPokeH2 = document.createElement('h2');
@@ -101,13 +121,13 @@ const renderCard = (element) => {
 
     // Destructuring de los elementos a utilizar del arreglo pokemons
     // (Para no escribir el prefijo element. en cada elemento del arreglo)
-    const { id, nombre, imagen, tipo, peso, tamaño, habilidades, debilidades } = element;
+    const { numero, nombre, imagen, tipo, peso, tamaño, habilidades, debilidades } = element;
 
     // Se guarda la imagen del pokemon en una nueva variable y se le asigna el atributo src 
     pokeImg.setAttribute('src', imagen);
 
     // Se escribe la información de cada pokémon en el HTML desde el arreglo pokemons
-    numPokeH2.innerHTML = id;
+    numPokeH2.innerHTML = numero;
     nombrePokeH2.innerHTML = nombre;
     heightH4.innerHTML = 'Height';
     heigthP.innerHTML = tamaño + ' m';
@@ -121,7 +141,8 @@ const renderCard = (element) => {
         const tipoH4 = document.createElement('h4');
         tipoH4.classList.add('type');
         tiposDiv.appendChild(tipoH4);
-        tipoH4.innerHTML = tipo[0].toUpperCase() + tipo.substring(1);
+        // tipoH4.innerHTML = tipo[0].toUpperCase() + tipo.substring(1);
+        tipoH4.innerHTML = tipo;
     });
 
     // Para cada habilidad se crea el elemento html, se añade su elemento padre
@@ -135,7 +156,7 @@ const renderCard = (element) => {
 
     // Para cada debilidad se crea el elemento html, se añade su elemento padre
     // y se escribe la debilidad
-    debilH4.innerHTML = 'Weakness'
+    debilH4.innerHTML = 'Weaknesses'
     debilidades.forEach(debilidad => {
         const debilP = document.createElement('p');
         containerDebDiv.appendChild(debilP);
@@ -144,7 +165,16 @@ const renderCard = (element) => {
 }
 
 const cleanView = () => {
-    contenedorTarjetas.innerHTML = '';
+    footerCardDiv.classList.add(none);
 };
 
 main()
+
+// Conversiones y Mayuscula en funcion
+// Eliminar duplicados de la API
+// Tarjeta de colores de acuerdo al tipo:
+// 2 tipos (header 1 color y footer otro color)
+// Esconder footer 
+// Añadir evento que muestre footer al clickar cada tarjeta
+
+//Busqueda y filtros
