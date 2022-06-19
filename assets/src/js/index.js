@@ -1,9 +1,14 @@
+'use strict'
 // Se obtiene el element raiz HTML
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas');
+const searchPokemon = document.querySelector('#search');
+const pieTarjeta = document.querySelector('#pie-tarjeta');
+let footerCardDiv ;
 let pokemons = [];
 
 // Se obtienen los datos de la fuente de información
 const api = '../api/pokes.json'
+
 const main = () => {
     fetch(api)
     .then(response => response.json())
@@ -35,11 +40,6 @@ const convertData = (pokemons) =>{
     pokemons.forEach(poke => {
         poke.peso = (poke.peso / 2.205).toFixed(2); // Convierte lb a kg
         poke.tamaño = (poke.tamaño / 39.37).toFixed(2); // Convierte lb a kg
-        // poke.tipo.forEach(subtipo => {
-        //     // subtipo = subtipo[0].toUpperCase() + subtipo.substring(1);
-        //     // console.log('May: '+ poke.subtipo);
-        // });
-
     })
     for (let i = 0; i < pokemons.length; i++) {       
         for (let j = 0; j < pokemons[i].tipo.length; j++) {
@@ -47,7 +47,6 @@ const convertData = (pokemons) =>{
             pokemons[i].tipo[j] = (subtipo[0].toUpperCase() + subtipo.substring(1));
         }
     }
-    console.log(pokemons);
     return pokemons;
 }
 
@@ -56,7 +55,7 @@ const renderCard = (element) => {
 
     // Se crean los elementos html desde javascript
     const cardUniteDiv = document.createElement('div');
-    const cardPokeDiv = document.createElement('a');
+    const cardPokeDiv = document.createElement('div');
     const headerCardDiv = document.createElement('div');
     const numPokeDiv = document.createElement('div');
     const numPokeH2 = document.createElement('h2');
@@ -65,7 +64,7 @@ const renderCard = (element) => {
     const containerImgDiv = document.createElement('div');
     const pokeImg = document.createElement('img');
     const tiposDiv = document.createElement('div');
-    const footerCardDiv = document.createElement('div');
+    footerCardDiv = document.createElement('div');
     const footerCardRow1Div = document.createElement('div');
     const heightDiv = document.createElement('div');
     const heightH4 = document.createElement('h4');
@@ -93,6 +92,7 @@ const renderCard = (element) => {
     footerCardRow2Div.classList.add('footer-card-row-2');
     containerHabDiv.classList.add('container-hab');
     containerDebDiv.classList.add('container-deb');
+    footerCardDiv.classList.add('none');
 
     // Se añade la herencia de de los elementos con appendChild
     contenedorTarjetas.appendChild(cardUniteDiv);
@@ -125,6 +125,9 @@ const renderCard = (element) => {
 
     // Se guarda la imagen del pokemon en una nueva variable y se le asigna el atributo src 
     pokeImg.setAttribute('src', imagen);
+    pokeImg.setAttribute('id', 'img');
+    cardPokeDiv.setAttribute('id', 'tarjeta-poke');
+    footerCardDiv.setAttribute('id', 'pie-tarjeta');
 
     // Se escribe la información de cada pokémon en el HTML desde el arreglo pokemons
     numPokeH2.innerHTML = numero;
@@ -141,7 +144,43 @@ const renderCard = (element) => {
         const tipoH4 = document.createElement('h4');
         tipoH4.classList.add('type');
         tiposDiv.appendChild(tipoH4);
-        // tipoH4.innerHTML = tipo[0].toUpperCase() + tipo.substring(1);
+        if (tipo === 'Steel') {
+            tipoH4.classList.add('steel');           
+        } else if(tipo === 'Water'){
+            tipoH4.classList.add('water'); 
+        } else if(tipo === 'Bug'){
+            tipoH4.classList.add('bug'); 
+        } else if(tipo === 'Dragon'){
+            tipoH4.classList.add('dragon'); 
+        } else if(tipo === 'Electric'){
+            tipoH4.classList.add('electric'); 
+        } else if(tipo === 'Ghost'){
+            tipoH4.classList.add('ghost'); 
+        } else if(tipo === 'Fire'){
+            tipoH4.classList.add('fire'); 
+        } else if(tipo === 'Fairy'){
+            tipoH4.classList.add('fairy'); 
+        } else if(tipo === 'Ice'){
+            tipoH4.classList.add('ice'); 
+        } else if(tipo === 'Fighting'){
+            tipoH4.classList.add('fighting'); 
+        } else if(tipo === 'Normal'){
+            tipoH4.classList.add('normal'); 
+        } else if(tipo === 'Grass'){
+            tipoH4.classList.add('grass'); 
+        } else if(tipo === 'Psychic'){
+            tipoH4.classList.add('psychic'); 
+        } else if(tipo === 'Rock'){
+            tipoH4.classList.add('rock'); 
+        } else if(tipo === 'Dark'){
+            tipoH4.classList.add('dark'); 
+        } else if(tipo === 'Ground'){
+            tipoH4.classList.add('ground'); 
+        } else if(tipo === 'Poison'){
+            tipoH4.classList.add('poison'); 
+        } else if(tipo === 'Flying'){
+            tipoH4.classList.add('flying'); 
+        }
         tipoH4.innerHTML = tipo;
     });
 
@@ -162,16 +201,38 @@ const renderCard = (element) => {
         containerDebDiv.appendChild(debilP);
         debilP.innerHTML = debilidad;
     });
+    
 }
 
+// // tarjeta = document.querySelector('#tarjeta-poke');
+// contenedorTarjetas.addEventListener('click', (event) => {
+//     if (event.target.id === 'img') {
+//         contenedorTarjetas.innerHTML = 'Rompiste el pokedex'
+//     }
+// })
+
 const cleanView = () => {
-    footerCardDiv.classList.add(none);
+    contenedorTarjetas.innerHTML ='';
+};
+
+searchPokemon.addEventListener('keyup', (event) => {
+    const inputText = event?.target?.value.toLocaleLowerCase() || '';
+    cleanView();
+    const pokesFounded = searchingWithFilter(inputText);
+    pokesFounded.forEach(renderCard);
+});
+
+const searchingWithFilter = (searchingText) => {
+    const pokesFounded = pokemons.filter(pokemon => {
+        const nombre = pokemon.nombre;
+        return (nombre.toLocaleLowerCase()).includes(searchingText)
+    });
+    return pokesFounded;
 };
 
 main()
 
 // Conversiones y Mayuscula en funcion
-// Eliminar duplicados de la API
 // Tarjeta de colores de acuerdo al tipo:
 // 2 tipos (header 1 color y footer otro color)
 // Esconder footer 
