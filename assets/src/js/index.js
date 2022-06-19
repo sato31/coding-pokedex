@@ -3,7 +3,7 @@
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas');
 const searchPokemon = document.querySelector('#search');
 const pieTarjeta = document.querySelector('#pie-tarjeta');
-let footerCardDiv ;
+// let footerCardDiv ;
 let pokemons = [];
 
 // Se obtienen los datos de la fuente de información
@@ -54,7 +54,6 @@ const convertData = (pokemons) =>{
 const renderCard = (element) => {
 
     // Se crean los elementos html desde javascript
-    const cardUniteDiv = document.createElement('div');
     const cardPokeDiv = document.createElement('div');
     const headerCardDiv = document.createElement('div');
     const numPokeDiv = document.createElement('div');
@@ -64,7 +63,7 @@ const renderCard = (element) => {
     const containerImgDiv = document.createElement('div');
     const pokeImg = document.createElement('img');
     const tiposDiv = document.createElement('div');
-    footerCardDiv = document.createElement('div');
+    const footerCardDiv = document.createElement('div');
     const footerCardRow1Div = document.createElement('div');
     const heightDiv = document.createElement('div');
     const heightH4 = document.createElement('h4');
@@ -79,7 +78,6 @@ const renderCard = (element) => {
     const debilH4 = document.createElement('h4');
 
     // Se añaden sus respectivas clases a cada elemento creado
-    cardUniteDiv.classList.add('united-card');
     cardPokeDiv.classList.add('card');
     headerCardDiv.classList.add('header-card');
     containerImgDiv.classList.add('container-img');
@@ -95,8 +93,7 @@ const renderCard = (element) => {
     footerCardDiv.classList.add('none');
 
     // Se añade la herencia de de los elementos con appendChild
-    contenedorTarjetas.appendChild(cardUniteDiv);
-    cardUniteDiv.appendChild(cardPokeDiv);
+    contenedorTarjetas.appendChild(cardPokeDiv);
     cardPokeDiv.appendChild(headerCardDiv);
     headerCardDiv.appendChild(numPokeDiv);
     numPokeDiv.appendChild(numPokeH2);
@@ -105,7 +102,7 @@ const renderCard = (element) => {
     cardPokeDiv.appendChild(containerImgDiv);
     containerImgDiv.appendChild(pokeImg);
     cardPokeDiv.appendChild(tiposDiv);
-    cardUniteDiv.appendChild(footerCardDiv);
+    cardPokeDiv.appendChild(footerCardDiv);
     footerCardDiv.appendChild(footerCardRow1Div);
     footerCardRow1Div.appendChild(heightDiv);
     heightDiv.appendChild(heightH4);
@@ -123,11 +120,18 @@ const renderCard = (element) => {
     // (Para no escribir el prefijo element. en cada elemento del arreglo)
     const { numero, nombre, imagen, tipo, peso, tamaño, habilidades, debilidades } = element;
 
-    // Se guarda la imagen del pokemon en una nueva variable y se le asigna el atributo src 
-    pokeImg.setAttribute('src', imagen);
-    pokeImg.setAttribute('id', 'img');
+    // Se asignana los atributos html (src, id) a cada etiqueta
     cardPokeDiv.setAttribute('id', 'tarjeta-poke');
+    headerCardDiv.setAttribute('id', 'encabezado-tarjeta');
+    numPokeDiv.setAttribute('id', 'num-poke');
+    nombrePokeDiv.setAttribute('id', 'nombre-poke');
+    containerImgDiv.setAttribute('id', 'contenedor-img');
+    pokeImg.setAttribute('id', 'img');
+    pokeImg.setAttribute('src', imagen);
+    tiposDiv.setAttribute('id', 'contenedor-tipos');
     footerCardDiv.setAttribute('id', 'pie-tarjeta');
+    containerHabDiv.setAttribute('id', 'contenedor-hab');
+    containerDebDiv.setAttribute('id', 'contenedor-deb');
 
     // Se escribe la información de cada pokémon en el HTML desde el arreglo pokemons
     numPokeH2.innerHTML = numero;
