@@ -2,12 +2,13 @@
 // Se obtiene el element raiz HTML
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas');
 const searchPokemon = document.querySelector('#search');
-const pieTarjeta = document.querySelector('#pie-tarjeta');
+// const pieTarjeta = document.querySelector('#pie-tarjeta');
 // let footerCardDiv ;
 let pokemons = [];
+let cards = [];
 
 // Se obtienen los datos de la fuente de información
-const api = '../api/pokes.json'
+const api = './api/pokes.json'
 
 const main = () => {
     fetch(api)
@@ -121,6 +122,7 @@ const renderCard = (element) => {
     const { numero, nombre, imagen, tipo, peso, tamaño, habilidades, debilidades } = element;
 
     // Se asignana los atributos html (src, id) a cada etiqueta
+
     cardPokeDiv.setAttribute('id', 'tarjeta-poke');
     headerCardDiv.setAttribute('id', 'encabezado-tarjeta');
     numPokeDiv.setAttribute('id', 'num-poke');
@@ -205,15 +207,23 @@ const renderCard = (element) => {
         containerDebDiv.appendChild(debilP);
         debilP.innerHTML = debilidad;
     });
-    
+    // cards.push(cardPokeDiv.firstElementChild);
+
 }
 
-// // tarjeta = document.querySelector('#tarjeta-poke');
-// contenedorTarjetas.addEventListener('click', (event) => {
-//     if (event.target.id === 'img') {
-//         contenedorTarjetas.innerHTML = 'Rompiste el pokedex'
-//     }
-// })
+// tarjeta = document.querySelector('#tarjeta-poke');
+// for(let i = 0; i<contenedorTarjetas.length; i++){
+
+contenedorTarjetas.addEventListener('click', (event) => {
+    // if (event.target.id === 'tarjeta-poke'  ) {
+    //     const prueba = document.createElement('p')
+    //     event.target.appendChild(prueba);
+    //     prueba.innerHTML = 'prueba';
+    console.log(event.target);
+        // contenedorTarjetas.innerHTML = 'Rompiste el pokedex'
+    // };
+});
+// }
 
 const cleanView = () => {
     contenedorTarjetas.innerHTML ='';
@@ -234,6 +244,24 @@ const searchingWithFilter = (searchingText) => {
     return pokesFounded;
 };
 
+const select = document.querySelector('#selector-types')
+
+select.addEventListener('change',(event)=>{
+    let chosenType = event?.target?.value || '';
+    if (chosenType === 'All') {
+        cleanView()
+        pokemons.forEach(renderCard)
+    }
+    else{
+        const allPokemonsWithType = pokemons.filter( pokemon => {
+            const pokemonType = pokemon.tipo
+            return pokemonType.includes(chosenType)
+        })
+        cleanView()
+        allPokemonsWithType.forEach(renderCard)
+    }
+})
+
 main()
 
 // Conversiones y Mayuscula en funcion
@@ -241,5 +269,3 @@ main()
 // 2 tipos (header 1 color y footer otro color)
 // Esconder footer 
 // Añadir evento que muestre footer al clickar cada tarjeta
-
-//Busqueda y filtros

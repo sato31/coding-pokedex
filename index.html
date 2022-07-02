@@ -5,49 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/src/css/styles.css">
 </head>
 
 <header class="barra">
     <div class="container-logos">
-        <img class="logo" src="./images/pokedex-logo.png" alt="logo">
+        <img class="logo" src="./assets/images/pokedex-logo.png" alt="logo">
     </div>
     <div class="container-ligths">
-        <img class="point-blue" src="./images/blue.png" alt="blue">
-        <img class="name-pokedex" src="./images/Pokedex.png" alt="Pokedex">
-        <img class="ligth" src="./images/red.png" alt="red">
-        <img class="ligth" src="./images/yellow.png" alt="yellow">
-        <img class="ligth" src="./images/green.png" alt="green">
+        <img class="point-blue" src="./assets/images/blue.png" alt="blue">
+        <img class="name-pokedex" src="./assets/images/Pokedex.png" alt="Pokedex">
+        <img class="ligth" src="./assets/images/red.png" alt="red">
+        <img class="ligth" src="./assets/images/yellow.png" alt="yellow">
+        <img class="ligth" src="./assets/images/green.png" alt="green">
     </div>
     <div class="container-tools">
         <div id="container-search">
             <input type="search" name="search" id="search" placeholder="Pokémon name">
         </div>
-        
-        <div id="container-filter" class="dropdown">
-            <button class="dropbtn">Filtrar por tipo  ▼</button>
-            <div id="myDropdown" class="dropdown-content">
-              <!-- <input type="text" placeholder="Tipo" id="search-type" onkeyup="filterFunction()">
-              <a href="#steel">Acero</a>
-              <a href="#water">Agua</a>
-              <a href="#bug">Bicho</a>
-              <a href="#dragon">Dragón</a>
-              <a href="#electric">Eléctrico</a>
-              <a href="#ghost">Fantasma</a>
-              <a href="#fire">Fuego</a>
-              <a href="#fairy">Hada</a>
-              <a href="#ice">Hielo</a>
-              <a href="#fighting">Lucha</a>
-              <a href="#normal">Normal</a>
-              <a href="#grass">Planta</a>
-              <a href="#psychic">Psíquico</a>
-              <a href="#rock">Roca</a>
-              <a href="#dark">Siniestro</a>
-              <a href="#ground">Tierra</a>
-              <a href="#poison">Veneno</a>
-              <a href="#flying">Volador</a> -->
-            </div>
+
+        <div id="container-selector">
+            <select name="Select Types" class="search-selector" id="selector-types">
+              <option value="All" selected>All types</option>
+              <option value="Bug" class="bug">Bug</option>
+              <option value="Dark" class="dark">Dark</option>
+              <option value="Dragon" class="dragon">Dragon</option>
+              <option value="Electric" class="electric">Electric</option>
+              <option value="Fairy" class="fairy">Fairy</option>
+              <option value="Fighting" class="fighting">Fighting</option>
+              <option value="Fire" class="fire">Fire</option>
+              <option value="Flying" class="flying">Flying</option>
+              <option value="Ghost" class="ghost">Ghost</option>
+              <option value="Grass" class="grass">Grass</option>
+              <option value="Ground" class="ground">Ground</option>
+              <option value="Ice" class="ice">Ice</option>
+              <option value="Normal" class="normal">Normal</option>
+              <option value="Poison" class="poison">Poison</option>
+              <option value="Psychic" class="psychic">Psychic</option>
+              <option value="Rock" class="rock">Rock</option>
+              <option value="Steel" class="steel">Steel</option>
+              <option value="Water" class="water">Water</option>
+            </select>
         </div>
     </div>
 </header>
@@ -101,6 +100,6 @@
         
     </main>
 
-    <script src="./src/js/index.js"></script>
+    <script src="./assets/src/js/index.js"></script>
 </body>
 </html>
