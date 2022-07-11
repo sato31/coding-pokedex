@@ -169,12 +169,14 @@ h4.type{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    pointer-events: none;
 }
 
 .container-img{
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    pointer-events: none;
 }
 
 .img-poke{
@@ -186,10 +188,12 @@ h4.type{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    pointer-events: none;
 }
 .footer-card{
     height: auto;
     width: 220px;
+    pointer-events: none;
 }
 
 .footer-card-row-1, .footer-card-row-2 {

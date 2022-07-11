@@ -2,8 +2,6 @@
 // Se obtiene el element raiz HTML
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas');
 const searchPokemon = document.querySelector('#search');
-// const pieTarjeta = document.querySelector('#pie-tarjeta');
-// let footerCardDiv ;
 let pokemons = [];
 let cards = [];
 
@@ -121,7 +119,7 @@ const renderCard = (element) => {
     // (Para no escribir el prefijo element. en cada elemento del arreglo)
     const { numero, nombre, imagen, tipo, peso, tamaño, habilidades, debilidades } = element;
 
-    // Se asignana los atributos html (src, id) a cada etiqueta
+    // Se asignan los atributos html (src, id) a cada etiqueta
 
     cardPokeDiv.setAttribute('id', 'tarjeta-poke');
     headerCardDiv.setAttribute('id', 'encabezado-tarjeta');
@@ -207,23 +205,17 @@ const renderCard = (element) => {
         containerDebDiv.appendChild(debilP);
         debilP.innerHTML = debilidad;
     });
-    // cards.push(cardPokeDiv.firstElementChild);
+};
 
-}
-
-// tarjeta = document.querySelector('#tarjeta-poke');
-// for(let i = 0; i<contenedorTarjetas.length; i++){
-
+const arrFoot = ['' , '']
 contenedorTarjetas.addEventListener('click', (event) => {
-    // if (event.target.id === 'tarjeta-poke'  ) {
-    //     const prueba = document.createElement('p')
-    //     event.target.appendChild(prueba);
-    //     prueba.innerHTML = 'prueba';
-    console.log(event.target);
-        // contenedorTarjetas.innerHTML = 'Rompiste el pokedex'
-    // };
+    const currentCard = event.target;
+    const pieTarjeta = currentCard.lastChild;
+    arrFoot[0] = arrFoot[1];
+    arrFoot[1] = pieTarjeta;
+    if (arrFoot[0] !== '')  arrFoot[0].classList.add('none');
+    arrFoot[1].classList.remove('none');
 });
-// }
 
 const cleanView = () => {
     contenedorTarjetas.innerHTML ='';
